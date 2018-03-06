@@ -30,12 +30,21 @@ public class Map_Contact_AlexandriaLim {
 			else if(choice.equals("N")) {
 				System.out.println("");
 				System.out.println("Done!");
-				scn.close();
+				System.out.println("");
 				i++;
 			}
 	    }
-	    
+	    System.out.print("Search for contact: ");
+	    String name1 = scn.next();
+	    for(String key:  contactBook.keySet()){
+	    	if(key.equals(name1)){
+	    		System.out.println("Number: " + contactBook.get(key).intValue());
+	    		System.out.println("");
+	    	}
+	    }
+	    System.out.println("Contacts: ");
 	    contactBook.forEach((names, num) -> System.out.println(names + "'s Phone Number is " + num.intValue()));
+	    scn.close();
 	}
 
 }
